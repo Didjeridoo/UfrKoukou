@@ -1,4 +1,9 @@
+.idea/*
 .DS_Store
+.settings
+.buildpath
+.metadata/*
+.nbproject/*
 
 application/cache/*
 !application/cache/index.html
