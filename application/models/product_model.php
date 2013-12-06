@@ -75,6 +75,6 @@ class Product_model extends Models {
                 array_merge($tab, array(""+$tag => $tag));
             }
         }
-        $this->db->insert('product', $tab);
+        $this->db->insert('PRODUCT', $tab);
     }
 }
