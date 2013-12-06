@@ -121,21 +121,19 @@ padding:0px;
 
 </div>
 </div>
+<form action='test.php' method="post" id="form1">
+<input id='formcol' value="" style='display:none;'/>
+<input id='formmanche' value="" style='display:none;'/>
+<input id='formcouleur' value="" style='display:none;'/>
+<input id='formmotif' value="" style='display:none;'/>
+<input type='submit' value='Valider'/>
+				</form>
 <script type="text/javascript">
 var anc_onglet = 'couleur';
 change_onglet(anc_onglet);
-col("colrond.png");
-manche('manchecourte.png');
-couleur('noir.png');
+//col("colrond.png");
+//manche('manchecourte.png');
+//couleur('noir.png');
 </script>
-<form action='test.php' method="post" id="form1">
-<p>
-    <input id='formcol' value='' style='display:none;'/>
-<input id='formmanche' value='' style='display:none;'/>
-<input id='formcouleur' value='' style='display:none;'/>
-<input id='formmotif' value='' style='display:none;'/>
-<input type='submit' value='Valider'/>
-				</p>
-				</form>
 </body>
 </html>
