@@ -72,7 +72,7 @@ class Product_model extends Models {
             if($tag === "") {
                 continue;
             } else {
-                array_merge($tab, array(""+$tag => $tag));
+                array_merge($tab, array("".$tag => $tag));
             }
         }
         $this->db->insert('PRODUCT', $tab);
