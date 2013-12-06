@@ -62,7 +62,7 @@ class Product_model extends Models {
             default:
                 break;
         }
-        $query = $this->db->get('PRODUCT'); // On applique la requete
+        $query = $this->db->get('product'); // On applique la requete
         return $query->result(); // return -> tableau [ 'id_product' ]
     }
     
@@ -75,13 +75,13 @@ class Product_model extends Models {
                 array_merge($tab, array("".$tag => $tag));
             }
         }
-        $this->db->insert('PRODUCT', $tab);
+        $this->db->insert('product', $tab);
     }
     
     function get_by_user($user) { // Selectionne les produit d'un utilisateur
         $this->db->select('id_product');
         $this->db->where('id_user', $user);
-        $query = $this->db->get('PRODUCT');
+        $query = $this->db->get('product');
         return $query->result(); // return -> tableau [ 'id_product' ]
     }
 }
