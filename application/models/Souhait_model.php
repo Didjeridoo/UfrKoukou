@@ -9,7 +9,7 @@ class Shouait_model extends Models {
     function get_by_user($id_user) { // selectionne tout les souhaits d'un utilisateur 
         $this->db->select('id_product');
         $this->db->where('id_user', $id_user);
-        $query = $this->db->get('SOUHAIT');
+        $query = $this->db->get('souhait');
         return $query->result(); // return -> tableau [ 'id_product' ]
     }
     
@@ -22,7 +22,7 @@ class Shouait_model extends Models {
                 $this->db->where(''.$tag, $tag);
             }
         }
-        $query = $this->db->get('SOUHAIT');
+        $query = $this->db->get('souhait');
         return $query->result(); // return -> tableau [ 'id_product', 'id_user' ]
     }
     
@@ -35,6 +35,6 @@ class Shouait_model extends Models {
                 array_merge($tab, array("".$tag => $tag));
             }
         }
-        $this->db->insert('SOUHAIT', $tab);
+        $this->db->insert('souhait', $tab);
     }
 }
