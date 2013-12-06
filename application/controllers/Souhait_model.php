@@ -19,7 +19,7 @@ class Shouait_model extends Models {
             if($tag === "") {
                 continue;
             } else {
-                $this->db->where(''+$tag, $tag);
+                $this->db->where(''.$tag, $tag);
             }
         }
         $query = $this->db->get('SOUHAIT');
@@ -32,7 +32,7 @@ class Shouait_model extends Models {
             if($tag === "") {
                 continue;
             } else {
-                array_merge($tab, array(""+$tag => $tag));
+                array_merge($tab, array("".$tag => $tag));
             }
         }
         $this->db->insert('SOUHAIT', $tab);
