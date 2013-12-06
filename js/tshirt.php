@@ -12,26 +12,22 @@ anc_onglet = name;
 function col(name)
 {
 document.getElementById('colimage').src = "../image/tshirt/"+name;
-var inputvar = document.getElementById('formcol');
-inputvar.setAttribute('value', name);
+document.getElementById('formcol').value= name;
 }
 function manche(name)
 {
 document.getElementById('mancheimage').src = "../image/tshirt/"+name;
-var inputvar = document.getElementById('formmanche');
-inputvar.setAttribute('value', name);
+document.getElementById('formmanche').value = name;
 }
 function couleur(name)
 {
 document.getElementById('couleurimage').src = "../image/"+name;
-var inputvar = document.getElementById('formcouleur');
-inputvar.setAttribute('value', name);
+document.getElementById('formcouleur').value = name;
 }
 function motif(name)
 {
 document.getElementById('motifimage').src = "../image/tshirt/"+name;
-var inputvar = document.getElementById('formmotif');
-inputvar.setAttribute('value', name);
+document.getElementById('formmotif').value = name;
 }
 </script>
 <style type="text/css">
@@ -132,13 +128,13 @@ col("colrond.png");
 manche('manchecourte.png');
 couleur('noir.png');
 </script>
-<form> <!---action='test.php' method="post" id="form1">--->
+<form action='test.php' method="post" id="form1">
 <p>
     <input id='formcol' value='' style='display:none;'/>
 <input id='formmanche' value='' style='display:none;'/>
 <input id='formcouleur' value='' style='display:none;'/>
 <input id='formmotif' value='' style='display:none;'/>
-<input type='submit' value='Valider' onclick="<script type='text/javascript'>alert(document.getElementById('formcol').getAttribute('value'));</script>" />
+<input type='submit' value='Valider'/>
 				</p>
 				</form>
 </body>
