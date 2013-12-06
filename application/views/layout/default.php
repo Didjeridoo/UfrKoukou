@@ -1,78 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <!-- CHARTSET -->
     <meta charset=utf-8>
-    <!-- TITLE -->
     <title><?= $this->template->title->default("Wishop") ?></title>
     <!-- METAS -->
     <meta name="robots" content="no-cache">
-    <meta name="description" content="<?= $this->template->description; ?>">
-    <meta name="keywords" content="serveur, soul of warcraft, minecraft">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="Wishop - Find your things">
+    <meta name="keywords" content="wishop, social, network, sell, buy">
+    <meta name="author" content="fmif">
     <?= $this->template->meta ?>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?= asset_url('css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" type="text/css" media="screen" href="<?= asset_url('css/bootstrap-theme.min.css') ?>">
+    <link rel="stylesheet" media="screen" href="<?= asset_url('css/bootstrap.css') ?>">
+    <link rel="stylesheet" media="screen" href="<?= asset_url('css/font.css') ?>">
+    <link rel="stylesheet" media="screen" href="<?= asset_url('css/common.css') ?>">
+    <!--<link rel="stylesheet" media="screen" href="<?= asset_url('css/theme.css') ?>">-->
     <?= $this->template->stylesheet ?>
+    <!--[if lte IE 7]>
+        <script src="js/lte-ie7.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+    <div id="topbar" class="fixed">
+        <div class="inner">
+            <div id="logo" class="pull-left">
+                <a href="">
+                    <div class="dandelion"></div>
+                </a>
+            </div>
+            <div id="panel-user" class="pull-right">
+                <div class="bubble">
+                    <div>
+                        <a href="">1</a>
+                    </div>
+                    <span class="caret caret-right"></span>
+                    <span class="caret caret-right"></span>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
+                <div class="avatar-frame">
+                    <a href="">
+                        <img src="<?= asset_url('img/template/no_avatar.png') ?>" style="width: 38px; height: 38px;">
+                    </a>
+                </div>
+                <div id="user-dropdown" class="dropdown">
+                    <a href="" class="btn-dropdown"><span class="caret"></span></a>
+                    <div class="dropdown-content dropdown-right" style="display: none;">
+                        <ul class="unstylled">
+                            <li><a href=""><span aria-hidden="true" class="icon-eye-2"></span>Profil</a></li>
+                            <li><a href=""><span aria-hidden="true" class="icon-cog"></span>Mon compte</a></li>
+                            <li class="danger"><a href="<?= site_url("user/logout"); ?>"><span aria-hidden="true" class="icon-switch"></span>Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <!-- /.navbar-collapse -->
-    <?= $this->session->flashdata('user') ?>
-    <?= $this->template->content ?>
-</nav>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<script type="text/javascript" src="<?= asset_url('js/bootstrap.min.js') ?>"></script>
+        <div class="top-divider stripes"></div>
+    </div>
+    <div id="main" class="container">
+        <div id="left-col">
+            <a id="left-close-top" class="col-btn top-divider" href="">
+                <div class="arrows-right">
+                    <div class="arrow"></div><div class="arrow"></div><div class="arrow"></div>
+                </div>
+            </a>
+            <nav id="nav">
+                <ul class="unstylled">
+                    <li style="width: 100%;"><a class="active" href=""><span aria-hidden="true" class="icon-home"></span><span>Accueil</span></a></li>
+                    <li style="width: 100%;">
+                        <a href=""><span aria-hidden="true" class="icon-menu-2"></span><span>Rubriques</span><span class="caret"></span></a>
+                        <div class="menu-bloc menu-close" style="left: -200px; width: 200px;">
+                            <ul class="unstylled">
+                                <li><a href=""><span><span class="link-circle"></span></span>Test</a></li>
+                                <li><a href=""><span><span class="link-circle"></span></span>Test</a></li>
+                                <li><a href=""><span><span class="link-circle"></span></span>Test</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="width: 100%;">
+                        <a href=""><span aria-hidden="true" class="icon-stats"></span><span>Statistiques</span><span class="caret"></span></a>
+                        <div class="menu-bloc menu-close" style="left: -200px; width: 200px;">
+                            <ul class="unstylled">
+                                <li><a href=""><span><span class="link-circle"></span></span>Utilisateurs</a></li>
+                                <li><a href=""><span><span class="link-circle"></span></span>Tchats</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="width: 100%;">
+                        <div class="search-bloc">
+                            <span aria-hidden="true" class="icon-search"></span>
+                            <input type="text" id="friends_name" name="friends_name" placeholder="Rechercher ...">
+                        </div>
+                    </li>
+                    <li style="width: 100%;"><a href=""><span aria-hidden="true" class="icon-home"></span><span>Lien</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="main-col">
+            <div class="top-divider"></div>
+            <div class="inner">
+                <?= $this->session->flashdata('user') ?>
+                <?= $this->template->content ?>
+            </div>
+        </div>
+        <div id="right-col">
+            <div class="top-divider"></div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="<?= asset_url('js/jquery-1.9.0.min.js') ?>"></script>
+    <script type="text/javascript" src="<?= asset_url('js/jquery.cookie.js') ?>"></script>
+    <script type="text/javascript" src="<?= asset_url('js/main.js') ?>"></script>
 </body>
 </html>
