@@ -4,15 +4,19 @@ if (!defined("BASEPATH")) {
     exit("No direct script access allowed");
 }
 
+/**
+ * Class Auth
+ */
 class Auth
 {
 
-    // default values
+    // Defaults values
     private $cookie_name = 'autologin';
     private $cookie_encrypt = false;
     private $autologin_expire = 5184000;
     private $hash_algorithm = 'sha256';
 
+    // Instance of app
     private $ci;
 
     /**
@@ -39,7 +43,7 @@ class Auth
     /**
      * Initialize with configuration array
      *
-     * @param array $config
+     * @param array $config Some data
      */
     public function initialize($config = array())
     {
@@ -82,7 +86,7 @@ class Auth
     /**
      * Check if the current user is logged in or not
      *
-     * @return boolean
+     * @return boolean Login or Logout
      */
     public function loggedin()
     {
@@ -92,7 +96,7 @@ class Auth
     /**
      * Returns the user id of the current user when logged in
      *
-     * @return int
+     * @return string Username reference
      */
     public function userid()
     {
@@ -102,8 +106,8 @@ class Auth
     /**
      * Generate a new key pair and create the autologin cookie
      *
-     * @param int $id
-     * @param string $series
+     * @param int $id Reference
+     * @param bool|string $series Something
      */
     private function create_autologin($id, $series = false)
     {
@@ -143,7 +147,7 @@ class Auth
     /**
      * Detects the autologin cookie and check public/private key pair
      *
-     * @return boolean
+     * @return boolean Login or not
      */
     private function autologin()
     {
@@ -175,7 +179,7 @@ class Auth
     /**
      * Write data to autologin cookie
      *
-     * @param array $data
+     * @param array $data Some data
      */
     private function write_cookie($data = array())
     {
@@ -195,7 +199,7 @@ class Auth
     /**
      * Read data from autologin cookie
      *
-     * @return boolean
+     * @return boolean Readable
      */
     private function read_cookie()
     {
@@ -223,7 +227,7 @@ class Auth
     /**
      * Generate public/private key pair
      *
-     * @return array
+     * @return array Keys
      */
     private function generate_keys()
     {
