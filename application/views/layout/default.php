@@ -14,14 +14,16 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- STYLESHEETS -->
+    <link rel="stylesheet" media="screen" href="<?= asset_url('css/bootstrap.css') ?>">
     <link rel="stylesheet" media="screen" href="<?= asset_url('css/font.css') ?>">
     <link rel="stylesheet" media="screen" href="<?= asset_url('css/common.css') ?>">
+    <!--<link rel="stylesheet" media="screen" href="<?= asset_url('css/theme.css') ?>">-->
     <?= $this->template->stylesheet ?>
     <!--[if lte IE 7]>
         <script src="js/lte-ie7.js"></script>
     <![endif]-->
 </head>
-<body id="home">
+<body>
     <div id="topbar" class="fixed">
         <div class="inner">
             <div id="logo" class="pull-left">
