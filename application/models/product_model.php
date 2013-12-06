@@ -65,4 +65,16 @@ class Product_model extends Models {
         $querry = $this->db->get('product');
         return $querry->result();
     }
+    
+    function add_by_tag($tags) {
+        $tab = array();
+        foreach ($tags as $tag) {
+            if($tag === "") {
+                continue;
+            } else {
+                array_merge($tab, array(""+$tag => $tag));
+            }
+        }
+        $this->db->insert('product', $tab);
+    }
 }
