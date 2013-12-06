@@ -12,9 +12,9 @@ class User extends CI_Controller
     public function index()
     {
         if (!$this->auth->loggedin()) {
-            $this->template->set_template('layout/home');
+            $this->template->set_template('layout/default');
         }
-        $this->template->content->view('user/index', array());
+        $this->template->content->view('user/connected', array());
         $this->template->publish();
     }
 
