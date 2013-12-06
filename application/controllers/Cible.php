@@ -16,10 +16,10 @@ function makeList($liste){
             $arg[$id]=$liste[$i];
         }
     }
+    return $arg;
 }
 
 function research(String $k){
-    $key;
     for ($i=0;i< sizeof($key);$i++){
         if($key[$i]==$k{0}){
             $key=$i;
@@ -43,3 +43,5 @@ Class Element{
         this.$id=id; 
     }
 } 
+
+echo  makeList($_POST['myform']);
