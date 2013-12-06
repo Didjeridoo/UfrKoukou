@@ -12,9 +12,44 @@ class User extends CI_Controller
     public function index()
     {
         if (!$this->auth->loggedin()) {
-            $this->template->set_template('layout/default');
+            $this->template->set_template('layout/home');
+            $this->template->content->view('user/index', array());
+        } else {
+            $this->template->content->view('user/connected', array());
         }
-        $this->template->content->view('user/connected', array());
+        $this->template->publish();
+    }
+
+    /**
+     * Draw page
+     */
+    public function draw()
+    {
+        $this->template->content->view(
+            'user/draw'
+        );
+        $this->template->publish();
+    }
+
+    /**
+     * Choice page
+     */
+    public function choice()
+    {
+        $this->template->content->view(
+            'user/choice'
+        );
+        $this->template->publish();
+    }
+
+    /**
+     * Search page
+     */
+    public function search()
+    {
+        $this->template->content->view(
+            'user/search'
+        );
         $this->template->publish();
     }
 

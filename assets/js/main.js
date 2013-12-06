@@ -107,25 +107,4 @@ jQuery(function($){
 		div.hide();
 	});
 
-	$(document).ready(
-		$('.dandelion').each(function(i){
-
-			var tpl = $('<div id="d'+i+'"></div>');
-			for(j = 0; j < 12; j++){
-				tpl.append('<div id="loupe-'+i+'-'+j+'" class="loupe"></div>');
-			}
-			tpl.append('<div id="tige-'+i+'" class="tige"></div>');
-		})
-		/*
-		$('.dandelion-mini').each(function(i){
-
-			var tpl = $('<div id="d'+i+'"></div>');
-			for(j = 0; j < 12; j++){
-				tpl.append('<div id="loupe-'+i+'-'+j+'" class="loupe"></div>');
-			}
-			tpl.append('<div id="tige-'+i+'" class="tige"></div>');
-		});
-*/
-	);
-
 });

@@ -17,7 +17,6 @@
     <link rel="stylesheet" media="screen" href="<?= asset_url('css/bootstrap.css') ?>">
     <link rel="stylesheet" media="screen" href="<?= asset_url('css/font.css') ?>">
     <link rel="stylesheet" media="screen" href="<?= asset_url('css/common.css') ?>">
-    <!--<link rel="stylesheet" media="screen" href="<?= asset_url('css/theme.css') ?>">-->
     <?= $this->template->stylesheet ?>
     <!--[if lte IE 7]>
         <script src="js/lte-ie7.js"></script>
