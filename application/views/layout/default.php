@@ -49,7 +49,7 @@
                     <div class="dropdown-content dropdown-right" style="display: none;">
                         <ul class="unstylled">
                             <li><a href=""><span aria-hidden="true" class="icon-eye-2"></span>Profil</a></li>
-                            <li><a href=""><span aria-hidden="true" class="icon-cog"></span>Mon compte</a></li>
+                            <li><a href="<?= site_url("user/account"); ?>"><span aria-hidden="true" class="icon-cog"></span>Compte</a></li>
                             <li class="danger"><a href="<?= site_url("user/logout"); ?>"><span aria-hidden="true" class="icon-switch"></span>Déconnexion</a></li>
                         </ul>
                     </div>
@@ -112,5 +112,6 @@
     <script type="text/javascript" src="<?= asset_url('js/jquery-1.9.0.min.js') ?>"></script>
     <script type="text/javascript" src="<?= asset_url('js/jquery.cookie.js') ?>"></script>
     <script type="text/javascript" src="<?= asset_url('js/main.js') ?>"></script>
+    <script type="text/javascript" src="<?= asset_url('js/bootstrap.min.js') ?>"></script>
 </body>
 </html>
