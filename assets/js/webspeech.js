@@ -28,7 +28,7 @@ $(function($)){
 					$.ajax({
 						type : "post",
 						dataType : "json",
-						url : 'application/controllers/welcome.php',
+						url : 'application/controllers/Search.php',
 						data : $words, 
 						success: succes
 					});
