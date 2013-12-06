@@ -62,9 +62,15 @@ Class User_model extends CI_Model
         $this->db->where($where, $value)->delete($this->table);
     }
 
-    function get($pseudo)
+    /**
+     * Get user info
+     *
+     * @param string $username
+     * @return mixed Some data
+     */
+    public function get($username)
     {
-        return $this->db->where("username", $pseudo)->get($this->table)->row_array();
+        return $this->db->where("username", $username)->get($this->table)->row_array();
     }
 
     /**

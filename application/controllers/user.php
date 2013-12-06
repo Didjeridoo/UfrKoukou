@@ -93,18 +93,18 @@ class User extends CI_Controller
                     $this->auth->login($user['username'], false);
                     $this->session->set_flashdata(
                         'user',
-                        '<div class="alert-message success">Bonjour ' . $user['username'] . ', vous êtes maintenant connecté !<button type="button" class="close" data-dismiss="alert">×</button></div>'
+                        '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bonjour ' . $user['username'] . ', vous êtes maintenant connecté !</div>'
                     );
                 } else {
                     $this->session->set_flashdata(
                         'user',
-                        '<div class="alert-message error">Le mot de passe que vous avez saisie est incorrect !<button type="button" class="close" data-dismiss="alert">×</button></div>'
+                        '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Le mot de passe que vous avez saisie est incorrect !</div>'
                     );
                 }
             } else {
                 $this->session->set_flashdata(
                     'user',
-                    '<div class="alert-message error">Aucun compte n\'est associé à ce nom d\'utilisateur !<button type="button" class="close" data-dismiss="alert">×</button></div>'
+                    '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Aucun compte n\'est associé à ce nom d\'utilisateur !</div>'
                 );
             }
         }
@@ -125,6 +125,8 @@ class User extends CI_Controller
         $this->load->library('form_validation');
         // Load user model
         $this->load->model('user_model');
+
+        $data = $this->user_model->get($this->auth->userid());
 
         // Rules for form
         $this->form_validation->set_error_delimiters('<span class="help-inline">', '</span>');
@@ -195,7 +197,12 @@ class User extends CI_Controller
             redirect();
         }
 
-        $this->template->content->view('user/profil');
+        $this->template->content->view(
+            'user/account',
+            array(
+                'userdata' => $data
+            )
+        );
         $this->template->publish();
     }
 
