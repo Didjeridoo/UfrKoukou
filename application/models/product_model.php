@@ -62,7 +62,7 @@ class Product_model extends Models {
             default:
                 break;
         }
-        $querry = $this->db->get('product');
+        $querry = $this->db->get('PRODUCT');
         return $querry->result();
     }
     
@@ -75,6 +75,6 @@ class Product_model extends Models {
                 array_merge($tab, array(""+$tag => $tag));
             }
         }
-        $this->db->insert('product', $tab);
+        $this->db->insert('PRODUCT', $tab);
     }
 }
